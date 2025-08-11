@@ -1,5 +1,15 @@
 package main
 
+import (
+	"github.com/njayp/hades/pkg/lesson/one"
+	"github.com/njayp/hades/pkg/poke"
+)
+
 func main() {
-	println("Hello World!")
+	// printPoke()
+	one.Run()
+}
+
+func printPoke() {
+	poke.GetRandomPokemonFromAPI().Print()
 }
