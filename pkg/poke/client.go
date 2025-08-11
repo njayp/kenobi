@@ -12,6 +12,10 @@ func GetRandomPokemonFromAPI() Pokemon {
 	return GetPokemonFromAPI(rand.Intn(150) + 1) // Random ID from 1 to 150
 }
 
+func GetStarterPokemon() Pokemon {
+	return GetPokemonFromAPI(7) // Squirtle
+}
+
 func GetPokemonFromAPI(id int) Pokemon {
 	// Get 3 random Pokemon (from the first 150 - original Pokemon!)
 	pokemonID := rand.Intn(150) + 1 // Random ID from 1 to 150
