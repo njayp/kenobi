@@ -1,7 +1,6 @@
 package exercises
 
 import (
-	"reflect"
 	"testing"
 )
 

@@ -1,7 +1,6 @@
 package exercises
 
 import (
-	"reflect"
 	"testing"
 )
 
@@ -50,7 +49,7 @@ func (r *Rectangle) Scale(factor float64) {
 func TestPersonStruct(t *testing.T) {
 	// Test struct creation
 	person := NewPerson("Alice", 25)
-	
+
 	if person.Name != "Alice" {
 		t.Errorf("Name = %q, want %q", person.Name, "Alice")
 	}
@@ -63,7 +62,7 @@ func TestGetInfo(t *testing.T) {
 	person := NewPerson("Bob", 30)
 	info := person.GetInfo()
 	expected := "Name: Bob, Age: 30"
-	
+
 	if info != expected {
 		t.Errorf("GetInfo() = %q, want %q", info, expected)
 	}
@@ -72,7 +71,7 @@ func TestGetInfo(t *testing.T) {
 func TestHaveBirthday(t *testing.T) {
 	person := NewPerson("Charlie", 20)
 	person.HaveBirthday()
-	
+
 	if person.Age != 21 {
 		t.Errorf("After birthday, Age = %d, want 21", person.Age)
 	}
@@ -82,7 +81,7 @@ func TestRectangleArea(t *testing.T) {
 	rect := Rectangle{Width: 5.0, Height: 3.0}
 	area := rect.Area()
 	expected := 15.0
-	
+
 	if area != expected {
 		t.Errorf("Area() = %f, want %f", area, expected)
 	}
@@ -91,7 +90,7 @@ func TestRectangleArea(t *testing.T) {
 func TestRectangleScale(t *testing.T) {
 	rect := Rectangle{Width: 4.0, Height: 2.0}
 	rect.Scale(2.0)
-	
+
 	if rect.Width != 8.0 {
 		t.Errorf("After scaling, Width = %f, want 8.0", rect.Width)
 	}
@@ -111,7 +110,7 @@ func TestStructEmbedding(t *testing.T) {
 		Person: Person{Name: "Dave", Age: 35},
 		Salary: 50000,
 	}
-	
+
 	// Should be able to access embedded fields directly
 	if emp.Name != "Dave" {
 		t.Errorf("Embedded Name = %q, want %q", emp.Name, "Dave")
